@@ -6,5 +6,9 @@
   {
     "role": "user",
     "content": "The deployment failed with the following error from Fly.io:\n\n#10 2.580 error during build:\n#10 2.580 [vite:esbuild] Transform failed with 1 error:\n#10 2.580 /app/src/components/ArchitectsSection.tsx:81:22: ERROR: Expected identifier but found \"2\"\n\nPlease fix the issue."
+  },
+  {
+    "role": "user",
+    "content": "The deployment failed with the following error from Fly.io:\n\n#10 2.699 error during build:\n#10 2.699 [vite:esbuild] Transform failed with 2 errors:\n#10 2.699 /app/src/components/HeroSection.tsx:108:57: ERROR: The character \">\" is not valid inside a JSX element\n\nPlease fix the issue."
   }
 ]
