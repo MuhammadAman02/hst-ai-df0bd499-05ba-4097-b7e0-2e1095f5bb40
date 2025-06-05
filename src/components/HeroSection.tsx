@@ -99,13 +99,13 @@ const HeroSection = () => {
                 </div>
                 <div className="p-4 font-mono text-sm">
                   <div className="text-joylo-purple">import</div>
-                  <div className="text-gray-300 ml-4">React, { useState, useEffect }</div>
+                  <div className="text-gray-300 ml-4">React, {`{ useState, useEffect }`}</div>
                   <div className="text-joylo-purple">from</div>
                   <div className="text-green-400 ml-2">'react'</div>
                   <br />
                   <div className="text-joylo-blue">const</div>
                   <div className="text-yellow-400 ml-2">Dashboard</div>
-                  <div className="text-white ml-2">= () => {</div>
+                  <div className="text-white ml-2">= () =&gt; {`{`}</div>
                   <div className="text-gray-400 ml-4">// AI-generated component</div>
                   <div className="text-white ml-4">return (</div>
                   <div className="text-gray-300 ml-8">&lt;div className="dashboard"&gt;</div>
