@@ -39,16 +39,16 @@ const HeroSection = () => {
   }, [typedText, isTyping, currentPrompt, currentPromptIndex, prompts]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background Grid */}
       <div className="absolute inset-0 grid-pattern opacity-30"></div>
       
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-2 h-2 bg-joylo-blue rounded-full animate-float"></div>
-      <div className="absolute top-40 right-20 w-3 h-3 bg-joylo-purple rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-32 left-10 w-2 h-2 bg-joylo-blue rounded-full animate-float"></div>
+      <div className="absolute top-52 right-20 w-3 h-3 bg-joylo-purple rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
       <div className="absolute bottom-40 left-20 w-1 h-1 bg-joylo-blue-light rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
 
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-6 text-center relative z-10 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
