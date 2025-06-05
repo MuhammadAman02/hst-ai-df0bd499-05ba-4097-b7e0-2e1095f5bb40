@@ -78,7 +78,7 @@ const ArchitectsSection = () => {
             </div>
             <div className="flex items-center gap-2 text-gray-400">
               <Clock className="w-4 h-4 text-joylo-blue" />
-              <span>< 2 Hour Response Time</span>
+              <span>Less than 2 Hour Response Time</span>
             </div>
           </div>
         </div>
