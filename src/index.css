@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -91,89 +89,115 @@
   }
 
   body {
-    @apply bg-joylo-navy text-white font-sans;
-    background: linear-gradient(135deg, #0a0f1c 0%, #1a2332 50%, #0a0f1c 100%);
-    min-height: 100vh;
-  }
-
-  html {
-    scroll-behavior: smooth;
+    @apply bg-background text-foreground;
   }
 }
 
-@layer components {
+@layer utilities {
+  /* Custom Joylo Colors */
+  .bg-joylo-navy {
+    background-color: #0a0f1c;
+  }
+  
+  .bg-joylo-navy-light {
+    background-color: #1a1f2e;
+  }
+  
+  .bg-joylo-blue {
+    background-color: #3b82f6;
+  }
+  
+  .bg-joylo-blue-light {
+    background-color: #60a5fa;
+  }
+  
+  .bg-joylo-purple {
+    background-color: #8b5cf6;
+  }
+  
+  .text-joylo-blue {
+    color: #3b82f6;
+  }
+  
+  .text-joylo-blue-light {
+    color: #60a5fa;
+  }
+  
+  .text-joylo-purple {
+    color: #8b5cf6;
+  }
+  
+  .border-joylo-blue {
+    border-color: #3b82f6;
+  }
+  
+  .border-joylo-purple {
+    border-color: #8b5cf6;
+  }
+
+  /* Glass Effects */
   .glass-card {
-    @apply bg-glass backdrop-blur-lg border border-glass-border rounded-xl;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+  
+  .border-glass-border {
+    border-color: rgba(255, 255, 255, 0.1);
   }
 
-  .glow-border {
-    position: relative;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .glow-border::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #3b82f6);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .glow-border:hover::before {
-    opacity: 1;
-  }
-
+  /* Code Window */
   .code-window {
-    @apply bg-joylo-navy-light border border-glass-border rounded-lg overflow-hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    @apply bg-gray-900/50 backdrop-blur-lg border border-white/10 rounded-lg overflow-hidden;
   }
 
-  .typing-animation {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid #3b82f6;
-    animation: typing 3s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+  /* Architect Card */
+  .architect-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-white/20;
   }
 
-  @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: #3b82f6; }
-  }
-
+  /* Grid Pattern */
   .grid-pattern {
     background-image: 
       linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-size: 50px 50px;
   }
 
-  .architect-card {
-    @apply glass-card p-6 transition-all duration-300 hover:scale-105;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite alternate;
   }
 
-  .architect-card:hover {
-    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
-  }
-
+  /* Section Fade In */
   .section-fade-in {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.6s ease-out;
+    transition: all 0.8s ease-out;
   }
-
+  
   .section-fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
   }
 }
