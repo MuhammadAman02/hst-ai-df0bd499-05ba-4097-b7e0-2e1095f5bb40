@@ -1,0 +1,6 @@
+[
+  {
+    "role": "user",
+    "content": "The deployment failed with the following error from Fly.io:\n\n#10 3.036 error during build:\n#10 3.036 [vite:css] [postcss] /app/src/index.css:106:5: The `bg-glass` class does not exist. If `bg-glass` is a custom class, make sure it is defined within a `@layer` directive.\n#10 3.036 file: /app/src/index.css:106:4\n\nPlease fix the issue."
+  }
+]
