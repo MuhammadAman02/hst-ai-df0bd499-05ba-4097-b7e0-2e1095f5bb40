@@ -10,5 +10,9 @@
   {
     "role": "user",
     "content": "The deployment failed with the following error from Fly.io:\n\n#10 2.699 error during build:\n#10 2.699 [vite:esbuild] Transform failed with 2 errors:\n#10 2.699 /app/src/components/HeroSection.tsx:108:57: ERROR: The character \">\" is not valid inside a JSX element\n\nPlease fix the issue."
+  },
+  {
+    "role": "user",
+    "content": "The deployment failed with the following error from Fly.io:\n\nError: failed to update machine 90802d3ead1087: failed to update VM 90802d3ead1087: Your organization has reached its machine limit. Please contact billing@fly.io (Request ID: 01JX1YW0FQ654B64KW7B7JDRWE-sin) (Trace ID: f8df368ef72097896d8e1ada8ffdb598)\n\nPlease fix the issue."
   }
 ]
