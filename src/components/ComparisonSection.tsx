@@ -30,31 +30,31 @@ const ComparisonSection = () => {
   ];
 
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+    <section className="py-16 sm:py-20 lg:py-24 relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             <span className="text-white">Built to </span>
             <span className="bg-gradient-to-r from-joylo-blue to-joylo-purple bg-clip-text text-transparent">
               Ship.
             </span>
             <span className="text-white"> Not Just Tinker.</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Other platforms help you build. Joylo helps you ship. There's a difference.
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid gap-8">
+          <div className="grid gap-6 sm:gap-8">
             {/* Header */}
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-400 mb-2">Other Platforms</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-400 mb-2">Other Platforms</h3>
                 <p className="text-gray-500">Good for learning</p>
               </div>
               <div className="text-center">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-joylo-blue to-joylo-purple bg-clip-text text-transparent mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-joylo-blue to-joylo-purple bg-clip-text text-transparent mb-2">
                   Joylo AI
                 </h3>
                 <p className="text-gray-300">Built for shipping</p>
@@ -63,29 +63,29 @@ const ComparisonSection = () => {
 
             {/* Comparison Cards */}
             {comparisons.map((comparison, index) => (
-              <div key={index} className="grid md:grid-cols-2 gap-8 items-center">
+              <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
                 {/* Other Platform */}
-                <div className="glass-card p-6 border-red-500/20 hover:border-red-500/40 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <X className="w-4 h-4 text-red-400" />
+                <div className="glass-card p-4 sm:p-6 border-red-500/20 hover:border-red-500/40 transition-all duration-300">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <X className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-gray-300 mb-2">{comparison.other}</h4>
-                      <p className="text-gray-400">{comparison.otherDesc}</p>
+                      <h4 className="text-lg sm:text-xl font-semibold text-gray-300 mb-2">{comparison.other}</h4>
+                      <p className="text-sm sm:text-base text-gray-400">{comparison.otherDesc}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Joylo */}
-                <div className="glass-card p-6 border-joylo-blue/20 hover:border-joylo-blue/40 transition-all duration-300 hover:shadow-lg hover:shadow-joylo-blue/10">
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-joylo-blue/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="w-4 h-4 text-joylo-blue" />
+                <div className="glass-card p-4 sm:p-6 border-joylo-blue/20 hover:border-joylo-blue/40 transition-all duration-300 hover:shadow-lg hover:shadow-joylo-blue/10">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-joylo-blue/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-joylo-blue" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-white mb-2">{comparison.joylo}</h4>
-                      <p className="text-gray-300">{comparison.joyloDesc}</p>
+                      <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">{comparison.joylo}</h4>
+                      <p className="text-sm sm:text-base text-gray-300">{comparison.joyloDesc}</p>
                     </div>
                   </div>
                 </div>
@@ -94,9 +94,9 @@ const ComparisonSection = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-16">
-            <div className="glass-card p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="text-center mt-12 sm:mt-16">
+            <div className="glass-card p-6 sm:p-8 max-w-2xl mx-auto">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
                 Ready to ship instead of just tinker?
               </h3>
               <p className="text-gray-300 mb-6">
