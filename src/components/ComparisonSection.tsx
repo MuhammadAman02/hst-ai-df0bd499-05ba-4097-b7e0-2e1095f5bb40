@@ -38,7 +38,7 @@ const ComparisonSection = () => {
             <span className="bg-gradient-to-r from-joylo-blue to-joylo-purple bg-clip-text text-transparent">
               Ship.
             </span>
-            <span className="text-white"> Not Just Tinker.</span>
+            <span className="text-white"> Not Just Prototype.</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Other platforms help you build. Joylo helps you ship. There's a difference.
@@ -97,7 +97,7 @@ const ComparisonSection = () => {
           <div className="text-center mt-12 sm:mt-16">
             <div className="glass-card p-6 sm:p-8 max-w-2xl mx-auto">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-                Ready to ship instead of just tinker?
+                Ready to ship instead of just prototype?
               </h3>
               <p className="text-gray-300 mb-6">
                 Join thousands of builders who've made the switch to production-grade development.
