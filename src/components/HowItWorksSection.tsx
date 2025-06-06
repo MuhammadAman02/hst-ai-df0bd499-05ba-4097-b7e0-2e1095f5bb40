@@ -46,19 +46,19 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 grid-pattern opacity-20"></div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             <span className="text-white">How It </span>
             <span className="bg-gradient-to-r from-joylo-blue to-joylo-purple bg-clip-text text-transparent">
               Works
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             From idea to production in days, not months. Here's the Joylo workflow that's changing how apps get built.
           </p>
         </div>
@@ -67,35 +67,35 @@ const HowItWorksSection = () => {
         <div className="max-w-4xl mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="relative">
-              {/* Connector Line */}
+              {/* Connector Line - Hidden on mobile */}
               {index < steps.length - 1 && (
-                <div className="absolute left-8 top-20 w-0.5 h-24 bg-gradient-to-b from-gray-600 to-gray-800 z-0"></div>
+                <div className="hidden sm:block absolute left-6 sm:left-8 top-16 sm:top-20 w-0.5 h-20 sm:h-24 bg-gradient-to-b from-gray-600 to-gray-800 z-0"></div>
               )}
               
-              <div className="flex gap-8 mb-16 relative z-10">
+              <div className="flex gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 relative z-10">
                 {/* Step Number & Icon */}
                 <div className="flex-shrink-0">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-xl mb-4 shadow-lg`}>
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4 shadow-lg`}>
                     {step.number}
                   </div>
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${step.color} bg-opacity-20 flex items-center justify-center mx-2`}>
-                    <step.icon className="w-6 h-6 text-white" />
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${step.color} bg-opacity-20 flex items-center justify-center mx-2`}>
+                    <step.icon className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="glass-card p-6 hover:scale-105 transition-all duration-300">
-                    <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">{step.description}</p>
+                  <div className="glass-card p-4 sm:p-6 hover:scale-105 transition-all duration-300">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">{step.title}</h3>
+                    <p className="text-gray-300 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">{step.description}</p>
                     
                     {/* Example */}
-                    <div className="bg-joylo-navy-light rounded-lg p-4 border border-glass-border">
+                    <div className="bg-joylo-navy-light rounded-lg p-3 sm:p-4 border border-glass-border">
                       <div className="flex items-center gap-2 mb-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                         <span className="text-xs text-gray-400 font-mono">Example</span>
                       </div>
-                      <p className="text-sm text-gray-300 font-mono">{step.example}</p>
+                      <p className="text-xs sm:text-sm text-gray-300 font-mono">{step.example}</p>
                     </div>
                   </div>
                 </div>
@@ -105,18 +105,18 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Interactive Demo */}
-        <div className="mt-20">
-          <div className="glass-card p-8 max-w-5xl mx-auto">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-white mb-4">See the Full Flow</h3>
-              <p className="text-gray-300">Watch a real project go from idea to production</p>
+        <div className="mt-16 sm:mt-20">
+          <div className="glass-card p-6 sm:p-8 max-w-5xl mx-auto">
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">See the Full Flow</h3>
+              <p className="text-gray-300 text-sm sm:text-base">Watch a real project go from idea to production</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {/* Before */}
               <div>
-                <h4 className="text-lg font-semibold text-gray-400 mb-4 text-center">Traditional Development</h4>
-                <div className="space-y-3">
+                <h4 className="text-base sm:text-lg font-semibold text-gray-400 mb-3 sm:mb-4 text-center">Traditional Development</h4>
+                <div className="space-y-2 sm:space-y-3">
                   {[
                     "Write requirements doc (1-2 weeks)",
                     "Set up development environment (2-3 days)",
@@ -127,21 +127,21 @@ const HowItWorksSection = () => {
                     "Deployment setup (1 week)",
                     "Production launch (1 week)"
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-3 text-sm text-gray-400">
+                    <div key={index} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400">
                       <div className="w-2 h-2 bg-red-400 rounded-full flex-shrink-0"></div>
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 text-center">
-                  <span className="text-red-400 font-bold text-lg">12-20 weeks total</span>
+                <div className="mt-3 sm:mt-4 text-center">
+                  <span className="text-red-400 font-bold text-base sm:text-lg">12-20 weeks total</span>
                 </div>
               </div>
 
               {/* After */}
               <div>
-                <h4 className="text-lg font-semibold text-white mb-4 text-center">With Joylo AI</h4>
-                <div className="space-y-3">
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 text-center">With Joylo AI</h4>
+                <div className="space-y-2 sm:space-y-3">
                   {[
                     "Describe your app (5 minutes)",
                     "AI builds initial version (30 minutes)",
@@ -150,20 +150,20 @@ const HowItWorksSection = () => {
                     "Production optimization (2-3 days)",
                     "Deploy and launch (same day)"
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-3 text-sm text-gray-300">
+                    <div key={index} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-300">
                       <div className="w-2 h-2 bg-green-400 rounded-full flex-shrink-0"></div>
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 text-center">
-                  <span className="text-green-400 font-bold text-lg">3-5 days total</span>
+                <div className="mt-3 sm:mt-4 text-center">
+                  <span className="text-green-400 font-bold text-base sm:text-lg">3-5 days total</span>
                 </div>
               </div>
             </div>
 
-            <div className="text-center mt-8">
-              <button className="bg-gradient-to-r from-joylo-blue to-joylo-purple text-white px-8 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-joylo-blue/25">
+            <div className="text-center mt-6 sm:mt-8">
+              <button className="w-full sm:w-auto bg-gradient-to-r from-joylo-blue to-joylo-purple text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-joylo-blue/25">
                 Start Your Project Now
               </button>
             </div>
