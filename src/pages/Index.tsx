@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import HeroSection from '@/components/HeroSection';
 import ComparisonSection from '@/components/ComparisonSection';
 import SuperpowersSection from '@/components/SuperpowersSection';
@@ -6,8 +6,11 @@ import ArchitectsSection from '@/components/ArchitectsSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import SocialProofSection from '@/components/SocialProofSection';
 import CTASection from '@/components/CTASection';
+import { Menu, X } from 'lucide-react';
 
 const Index = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     console.log('Joylo AI homepage loaded');
     
@@ -38,7 +41,7 @@ const Index = () => {
     <div className="min-h-screen bg-joylo-navy text-white overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-joylo-navy/80 backdrop-blur-lg border-b border-glass-border">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center gap-3">
@@ -48,22 +51,52 @@ const Index = () => {
               <span className="text-xl font-bold text-white">Joylo AI</span>
             </div>
 
-            {/* Navigation Links */}
-            <div className="hidden md:flex items-center gap-8">
+            {/* Desktop Navigation Links */}
+            <div className="hidden lg:flex items-center gap-8">
               <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</a>
               <a href="#architects" className="text-gray-300 hover:text-white transition-colors">Architects</a>
               <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
               <a href="#examples" className="text-gray-300 hover:text-white transition-colors">Examples</a>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex items-center gap-4">
+            {/* Desktop CTA Buttons */}
+            <div className="hidden md:flex items-center gap-4">
               <button className="text-gray-300 hover:text-white transition-colors">Sign In</button>
               <button className="bg-joylo-blue hover:bg-joylo-blue-light text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300">
                 Start Building
               </button>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="lg:hidden p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-white" />
+              ) : (
+                <Menu className="w-6 h-6 text-white" />
+              )}
+            </button>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden mt-4 pb-4 border-t border-glass-border">
+              <div className="flex flex-col space-y-4 mt-4">
+                <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors py-2">How It Works</a>
+                <a href="#architects" className="text-gray-300 hover:text-white transition-colors py-2">Architects</a>
+                <a href="#pricing" className="text-gray-300 hover:text-white transition-colors py-2">Pricing</a>
+                <a href="#examples" className="text-gray-300 hover:text-white transition-colors py-2">Examples</a>
+                <div className="flex flex-col gap-3 pt-4 border-t border-glass-border">
+                  <button className="text-gray-300 hover:text-white transition-colors text-left">Sign In</button>
+                  <button className="bg-joylo-blue hover:bg-joylo-blue-light text-white px-4 py-3 rounded-lg font-semibold transition-all duration-300 text-center">
+                    Start Building
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -102,10 +135,10 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="bg-joylo-navy-light border-t border-glass-border py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company */}
-            <div>
+            <div className="col-span-1 md:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-6 h-6 rounded bg-gradient-to-br from-joylo-blue to-joylo-purple flex items-center justify-center">
                   <span className="text-white font-bold text-sm">J</span>
