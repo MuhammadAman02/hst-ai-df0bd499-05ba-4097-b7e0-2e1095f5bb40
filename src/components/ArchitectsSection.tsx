@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, MapPin, Clock, Zap } from 'lucide-react';
+import { Star, MapPin, Clock, Zap, Shield, Users, Rocket } from 'lucide-react';
 
 const ArchitectsSection = () => {
   const architects = [
@@ -58,14 +58,33 @@ const ArchitectsSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-white">The Secret Sauce? </span>
             <span className="bg-gradient-to-r from-joylo-blue to-joylo-purple bg-clip-text text-transparent">
-              People.
+              Real Developers. In-House. On Standby.
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            One click brings in a certified Joylo Architect — your partner for scale, performance, and polish.
-          </p>
+          
+          <div className="max-w-4xl mx-auto mb-8">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+              Joylo doesn't just help you build — it has your back when you need it most.
+            </p>
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+              Our certified Joylo Architects are in-house engineers — ready to co-build, refine, or ship your product.
+            </p>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              They take full responsibility for the code our AI generates and help you bring your vision to life, at scale.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-lg">
+              <div className="flex items-center gap-3">
+                <span className="text-red-400 text-2xl">🚫</span>
+                <span className="text-gray-300">No handoffs. No outsourcing.</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-green-400 text-2xl">✅</span>
+                <span className="text-white font-semibold">Just real developers, aligned with the platform they help build.</span>
+              </div>
+            </div>
+          </div>
           
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex items-center gap-2 text-gray-400">
@@ -149,7 +168,7 @@ const ArchitectsSection = () => {
 
               {/* CTA Button */}
               <button 
-                className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 mb-3 ${
                   architect.status === 'available'
                     ? 'bg-joylo-blue hover:bg-joylo-blue-light text-white hover:scale-105'
                     : 'bg-gray-600 text-gray-400 cursor-not-allowed'
@@ -158,8 +177,65 @@ const ArchitectsSection = () => {
               >
                 {architect.status === 'available' ? 'Connect Now' : 'Notify When Available'}
               </button>
+
+              {/* Microcopy */}
+              <p className="text-xs text-center text-gray-400 font-medium">
+                In-house. Joylo certified. Fully accountable.
+              </p>
             </div>
           ))}
+        </div>
+
+        {/* New Mini-Section */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <div className="glass-card p-8 border-t-4 border-joylo-blue">
+            <div className="text-center mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                You Don't Need an Architect.
+                <br />
+                <span className="text-gray-300">But It's Good to Know One's There.</span>
+              </h3>
+              
+              <div className="max-w-3xl mx-auto space-y-4 text-lg text-gray-300 leading-relaxed">
+                <p>
+                  Joylo AI builds production-grade apps — you can launch entirely on your own.
+                </p>
+                <p>
+                  But when you want to go further, faster — Joylo-certified developers are just one click away.
+                </p>
+                <p className="text-white font-semibold">
+                  They're not freelancers. They're our engineers. They're part of your journey.
+                </p>
+              </div>
+            </div>
+
+            {/* Trust Badges */}
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-2xl">✅</span>
+                </div>
+                <h4 className="font-semibold text-white mb-2">100% In-House Engineers</h4>
+                <p className="text-sm text-gray-400">No outsourcing, no handoffs, just our team</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-joylo-blue/20 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-2xl">⚙️</span>
+                </div>
+                <h4 className="font-semibold text-white mb-2">Fully Accountable for AI Output</h4>
+                <p className="text-sm text-gray-400">We take responsibility for every line of code</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-joylo-purple/20 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <h4 className="font-semibold text-white mb-2">Production-Ready, with or without a Developer</h4>
+                <p className="text-sm text-gray-400">Ship confidently, solo or with backup</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Section */}
