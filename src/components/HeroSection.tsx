@@ -7,10 +7,10 @@ const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(true);
   
   const prompts = [
-    "Build a SaaS dashboard with user auth and Stripe billing",
-    "Create a real-time chat app with video calling features",
-    "Design an e-commerce platform with inventory management",
-    "Build a project management tool with team collaboration"
+    "Create a real-time dashboard with user analytics and charts",
+    "Build a social media app with messaging and notifications",
+    "Design an e-commerce platform with payment integration",
+    "Create a project management tool with team collaboration"
   ];
   
   const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
@@ -120,23 +120,27 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Right Side - Interactive Builder */}
+            {/* Right Side - Unified Builder Interface */}
             <div className="relative">
-              {/* Code Editor Interface */}
-              <div className="glass-card p-6 mb-6">
-                <div className="mb-4">
-                  <div className="flex items-center gap-3 mb-4">
+              {/* Main Builder Interface - Single Unified View */}
+              <div className="glass-card overflow-hidden relative">
+                {/* Browser Header */}
+                <div className="bg-joylo-navy-light px-6 py-4 border-b border-glass-border">
+                  <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                     <span className="text-sm text-gray-400 ml-4 font-mono">joylo-builder.ai</span>
                   </div>
-                  
+                </div>
+
+                {/* Prompt Section */}
+                <div className="p-6 border-b border-glass-border bg-joylo-navy">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Code2 className="w-5 h-5 text-joylo-blue" />
+                    <span className="text-sm text-gray-400 font-mono">Prompt:</span>
+                  </div>
                   <div className="bg-joylo-navy-light rounded-lg p-4 border border-glass-border">
-                    <div className="flex items-center gap-3 mb-3">
-                      <Code2 className="w-5 h-5 text-joylo-blue" />
-                      <span className="text-sm text-gray-400 font-mono">Prompt:</span>
-                    </div>
                     <div className="font-mono text-white text-lg min-h-[2rem] flex items-center">
                       {typedText}
                       <span className="ml-1 w-0.5 h-6 bg-joylo-blue animate-pulse"></span>
@@ -144,48 +148,97 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                {/* Code Preview */}
-                <div className="bg-joylo-navy px-4 py-2 border-b border-glass-border rounded-t-lg">
-                  <span className="text-sm text-gray-400 font-mono">components/Dashboard.tsx</span>
+                {/* Code Editor Section */}
+                <div className="bg-joylo-navy-light">
+                  <div className="px-6 py-3 border-b border-glass-border bg-joylo-navy">
+                    <span className="text-sm text-gray-400 font-mono">components/Dashboard.tsx</span>
+                  </div>
+                  <div className="p-6 font-mono text-sm">
+                    <div className="space-y-1">
+                      <div>
+                        <span className="text-joylo-purple">import</span>
+                        <span className="text-gray-300 ml-2">React, {`{ useState, useEffect }`}</span>
+                      </div>
+                      <div>
+                        <span className="text-joylo-purple">from</span>
+                        <span className="text-green-400 ml-2">'react'</span>
+                      </div>
+                      <br />
+                      <div>
+                        <span className="text-joylo-blue">const</span>
+                        <span className="text-yellow-400 ml-2">Dashboard</span>
+                        <span className="text-white ml-2">= () =&gt; {`{`}</span>
+                      </div>
+                      <div className="text-gray-400 ml-4">// AI-generated component</div>
+                      <div className="text-white ml-4">return (</div>
+                      <div className="text-gray-300 ml-8">&lt;div className="dashboard"&gt;</div>
+                      <div className="text-gray-300 ml-12">...</div>
+                      <div className="text-gray-300 ml-8">&lt;/div&gt;</div>
+                      <div className="text-white ml-4">)</div>
+                      <div className="text-white">{`}`}</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-joylo-navy-light p-4 font-mono text-sm rounded-b-lg border border-glass-border border-t-0">
-                  <div className="text-joylo-purple">import</div>
-                  <div className="text-gray-300 ml-4">React, {`{ useState, useEffect }`}</div>
-                  <div className="text-joylo-purple">from</div>
-                  <div className="text-green-400 ml-2">'react'</div>
-                  <br />
-                  <div className="text-joylo-blue">const</div>
-                  <div className="text-yellow-400 ml-2">Dashboard</div>
-                  <div className="text-white ml-2">= () =&gt; {`{`}</div>
-                  <div className="text-gray-400 ml-4">// AI-generated component</div>
-                  <div className="text-white ml-4">return (</div>
-                  <div className="text-gray-300 ml-8">&lt;div className="dashboard"&gt;</div>
-                  <div className="text-gray-300 ml-12">...</div>
-                </div>
-              </div>
 
-              {/* Live Preview */}
-              <div className="glass-card p-4 relative">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm text-gray-400 font-mono">Live Preview</span>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-green-400">Joylo Architect Available</span>
+                {/* Live Preview Section */}
+                <div className="border-t border-glass-border">
+                  <div className="px-6 py-3 bg-joylo-navy border-b border-glass-border">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-400 font-mono">Live Preview</span>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-xs text-green-400">Joylo Architect Available</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="bg-white rounded-lg p-6 text-black min-h-[200px] relative overflow-hidden">
-                  <div className="grid grid-cols-3 gap-4 mb-4">
-                    <div className="h-4 bg-joylo-blue rounded animate-pulse"></div>
-                    <div className="h-4 bg-joylo-purple rounded animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                    <div className="h-4 bg-emerald-500 rounded animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="h-8 bg-gray-200 rounded"></div>
-                    <div className="h-6 bg-gray-100 rounded w-3/4"></div>
-                    <div className="h-6 bg-gray-100 rounded w-1/2"></div>
-                  </div>
-                  <div className="absolute bottom-4 right-4">
-                    <div className="text-xs text-gray-500">Real-time updates</div>
+                  <div className="p-6 bg-white text-black min-h-[200px] relative">
+                    {/* Mock Dashboard Preview */}
+                    <div className="space-y-4">
+                      {/* Header */}
+                      <div className="flex items-center justify-between">
+                        <h2 className="text-xl font-bold text-gray-800">Dashboard</h2>
+                        <div className="flex gap-2">
+                          <div className="w-8 h-8 bg-joylo-blue rounded animate-pulse"></div>
+                          <div className="w-8 h-8 bg-joylo-purple rounded animate-pulse"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Stats Cards */}
+                      <div className="grid grid-cols-3 gap-3">
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <div className="h-3 bg-joylo-blue rounded mb-2 animate-pulse"></div>
+                          <div className="h-2 bg-gray-200 rounded w-2/3"></div>
+                        </div>
+                        <div className="bg-purple-50 p-3 rounded-lg">
+                          <div className="h-3 bg-joylo-purple rounded mb-2 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                          <div className="h-2 bg-gray-200 rounded w-3/4"></div>
+                        </div>
+                        <div className="bg-emerald-50 p-3 rounded-lg">
+                          <div className="h-3 bg-emerald-500 rounded mb-2 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                          <div className="h-2 bg-gray-200 rounded w-1/2"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Chart Area */}
+                      <div className="bg-gray-50 rounded-lg p-4 h-24 flex items-end justify-between">
+                        {[...Array(8)].map((_, i) => (
+                          <div 
+                            key={i} 
+                            className="bg-joylo-blue rounded-t w-4 animate-pulse" 
+                            style={{ 
+                              height: `${Math.random() * 60 + 20}%`,
+                              animationDelay: `${i * 0.1}s`
+                            }}
+                          ></div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Real-time indicator */}
+                    <div className="absolute bottom-3 right-3 text-xs text-gray-500 flex items-center gap-1">
+                      <div className="w-1 h-1 bg-green-400 rounded-full animate-pulse"></div>
+                      Real-time updates
+                    </div>
                   </div>
                 </div>
               </div>
