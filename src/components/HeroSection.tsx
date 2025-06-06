@@ -80,23 +80,25 @@ const HeroSection = () => {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 mb-12">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-joylo-blue to-joylo-blue-light hover:from-joylo-blue-light hover:to-joylo-blue text-white px-10 py-6 text-xl font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-joylo-blue/30 group"
-                >
-                  <Rocket className="w-6 h-6 mr-3 group-hover:animate-bounce" />
-                  Start Building with Joylo
-                </Button>
-                
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-2 border-joylo-purple text-joylo-purple hover:bg-joylo-purple hover:text-white px-10 py-6 text-xl font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-joylo-purple/30 group"
-                >
-                  <Users className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-                  Tag a Certified Architect
-                </Button>
+              <div className="flex flex-col gap-6 mb-12">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-joylo-blue to-joylo-blue-light hover:from-joylo-blue-light hover:to-joylo-blue text-white px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-joylo-blue/30 group flex-1 sm:flex-none"
+                  >
+                    <Rocket className="w-5 h-5 mr-3 group-hover:animate-bounce" />
+                    Start Building with Joylo
+                  </Button>
+                  
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-2 border-joylo-purple text-joylo-purple hover:bg-joylo-purple hover:text-white px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-joylo-purple/30 group flex-1 sm:flex-none whitespace-nowrap"
+                  >
+                    <Users className="w-5 h-5 mr-3 group-hover:animate-pulse" />
+                    Engage a Certified Joylo Human Architect
+                  </Button>
+                </div>
               </div>
 
               {/* Feature Highlights */}
